@@ -1,40 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Management Dashboard
 
-## Getting Started
+A task management dashboard built with Next.js, integrating authentication and a database for managing notes. This project utilizes various modern technologies to create a functional application.
 
-First, run the development server:
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Setup Instructions](#setup-instructions)
+- [Folder Structure](#folder-structure)
+- [API Routes](#api-routes)
+- [Authentication](#authentication)
+- [Running the Project](#running-the-project)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Technologies
+
+- **Next.js** - React framework for server-side rendering and static site generation.
+- **TypeScript** - Static type checking for JavaScript.
+- **MongoDB** - NoSQL database for storing user data and notes.
+- **NextAuth.js** - Authentication library for Next.js applications.
+- **Bcrypt** - Encrypt Passwords with bcrypt.
+
+## Setup Instructions
+
+Follow these steps to get the project up and running locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/helsinfranz/notes.git
+cd notes
+```
+
+### 2. Install Dependencies
+
+Make sure you have [Node.js](https://nodejs.org/) installed. Then, run:
+
+```bash
+npm install
+```
+
+or, if you use Yarn:
+
+```bash
+yarn install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env.local` file in the root of the project and add the following environment variables:
+
+```env
+# MongoDB Connection String
+MONGODB_URI=mongodb://localhost:27017/your-database-name
+
+# NextAuth.js Secret
+NEXTAUTH_SECRET=your-nextauth-secret
+```
+
+### 4. Set Up MongoDB
+
+Make sure you have MongoDB installed and running. You can follow the [official MongoDB installation guide](https://docs.mongodb.com/manual/installation/) for instructions.
+
+Create the necessary collections in your MongoDB database:
+
+- `users` - For storing user credentials.
+- `notes` - For storing notes.
+
+### 5. Run the Development Server
+
+Start the development server with:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or, if you use Yarn:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Navigate to `http://localhost:3000` in your browser to see the application in action.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Folder Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **`/components`** - React components used in the project.
+- **`/context`** - Context providers for state management.
+- **`/lib`** - Utility functions, such as database connections and authentication helpers.
+- **`/pages`** - Next.js pages and API routes.
+- **`/styles`** - CSS or Tailwind configuration.
+- **`/public`** - Public assets, such as images.
 
-## Learn More
+## API Routes
 
-To learn more about Next.js, take a look at the following resources:
+- **`/api/getNotes`** - GET request to fetch notes from the database.
+- **`/api/editNotes`** - POST request to edit existing notes.
+- **`/api/deleteNotes`** - POST request to delete notes.
+- **`/api/signup`** - POST request to create a new user.
+- **`/api/addNotes`** - POST request to add a new note.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The project uses NextAuth.js for authentication with credentials provider. Make sure you configure the authentication settings correctly in `[...nextauth].ts`.
 
-## Deploy on Vercel
+## Running the Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For development:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run dev
+```
+
+For production:
+
+```bash
+npm run build
+npm run start
+```
+
+## Contributing
+
+Feel free to open issues or pull requests for improvements. Please make sure to follow the coding standards and write clear commit messages.
