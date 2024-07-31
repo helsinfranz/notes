@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.login_box {
+  background: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 14.2px;
+  text-align: center;
+}
+
+.h1 {
+  margin-bottom: 20px;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 47.6px;
+  text-align: center;
+}
+
+.highlight {
+  color: #6a4ce7;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  padding: 12px 10px;
+  /* margin-bottom: 1rem; */
+  /* color: #EBEBEB;'' */
+  background-color: rgb(245, 245, 245);
+  color: rgb(100, 100, 100);
+  /* border: 1px solid #ccc; */
+  border: none;
+  width: 450px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24.2px;
+  outline-color: rgb(170, 170, 170);
+}
+
+.input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.input_box {
+  position: relative;
+}
+
+.input_box > svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.button {
+  padding: 12px;
+  /* border: none; */
+  border: 1px solid;
+  border-image-source: linear-gradient(360deg, #4b36cc 0%, #9c93d4 107.69%);
+  border-radius: 8px;
+  background: #6a4ce7;
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  background: linear-gradient(180deg, #4c38c2 0%, #2f2188 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+  box-shadow: 0px 4px 16px 0px #0000001a;
+  box-shadow: 0px 12px 16px 0px #bababa33 inset;
+  opacity: 0.7;
+  cursor: not-allowed;
+  height: 44px;
+}
+
+.active_btn {
+  opacity: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active_btn:hover {
+  opacity: 0.9;
+}
+
+.p {
+  /* gap: 24px; */
+  margin-top: 28px;
+  font-size: 16px;
+  text-align: center;
+  color: rgb(100, 100, 100);
+}
+
+/* .a {
+    text-decoration: none;
+    color: inherit;
+  } */
+
+.a .highlight {
+  color: #0054a1;
+  cursor: pointer;
+}
